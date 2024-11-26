@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--=== Required meta tags ===-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--=== custom css ===-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    crossorigin="anonymous" />
+  <link rel="shortcut icon" type="image/ico" href="src/assets/icons/1/ticket.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/assets/css/home.css">
+  <link rel="stylesheet" href="src/assets/css/main.css">
+  <link rel="icon" type="image/svg" href="src/assets/icons/1/ticket.svg">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+
+
+  <!--=== custom css ===-->
+  <title>Event Sphere</title>
+
+  <script>
+    let isDemo = true;
+    let fetchPlans = async () => {
+      const plans_loader = document.getElementById('plans_loader');
+      for (let i = 0; i < 3; i++) {
+        const skeletonplanDiv = document.createElement('div');
+        skeletonplanDiv.className = 'skeleton  skeleton-text__body';
+        plans_loader.appendChild(skeletonplanDiv);
+      }
+      let response = await fetch(`/api/admin/plan?islandingPage=${true}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      let res = await response.json();
+      showPlans(res.data);
+
+    }
+    window.onload = fetchPlans;
+
+    let showPlans = (plans) => {
+
+      for (i = 0; i < plans.length; i++) {
+        createPlanBox(plans[i], i);
+      }
+    }
+
+    let purchasePlan = (id) => {
+      localStorage.setItem("bookinghub_planId", id);
+      window.location.href = '/registration';
+    }
+
+    function createPlanBox(data, i) {
+
+      const plans_loader = document.getElementById('plans_loader');
+      plans_loader.style.display = 'none';
+
+      const parentDiv = document.getElementById('plan_div');
+      const colDiv = document.createElement('div');
+      colDiv.classList.add('col-lg-4', 'col-md-6');
+
+      const planWrapperDiv = document.createElement('div');
+      if (data?.isRecommended) {
+        planWrapperDiv.classList.add('bh_plan_wrapper', 'odd_plan_wrap');
+        const ribbon = document.createElement("span");
+        ribbon.classList.add("ribbon");
+        const innerSpan = document.createElement("span");
+        innerSpan.innerText = "Recommended";
+        ribbon.appendChild(innerSpan);
+        planWrapperDiv.appendChild(ribbon);
+      } else {
+        planWrapperDiv.classList.add('bh_plan_wrapper');
+      }
+
+
+      const planUpperDiv = document.createElement('div');
+      if (data?.isRecommended) {
+        planUpperDiv.classList.add('plan_upper', 'odd_uper_part');
+      } else {
+        planUpperDiv.classList.add('plan_upper');
+      }
+
+
+      const planTitle = document.createElement('h4');
+      planTitle.textContent = (data.planname).charAt(0).toUpperCase() + (data.planname).slice(1);
+
+      const planAmountDiv = document.createElement('div');
+      planAmountDiv.classList.add('plan_amount');
+
+      const planPrice = document.createElement('h3');
+      planPrice.innerHTML = `$${data.price} <span>/${data.paymentPeriod}</span>`;
+
+      const planDescription = document.createElement('p');
+      planDescription.textContent = data.description;
+
+      const planFeatureDiv = document.createElement('div');
+      if (data?.isRecommended) {
+        planFeatureDiv.classList.add('bh_plan_feature', 'odd_feature');
+      } else {
+        planFeatureDiv.classList.add('bh_plan_feature');
+      }
+
+      const feature1 = document.createElement('p');
+      feature1.innerHTML = `<img src="home/assets/image/tick.png" alt="tick" /> No of campaign : <span> ${data.noOfCampaigns}</span>`;
+
+      const feature2 = document.createElement('p');
+      feature2.innerHTML = `<img src="home/assets/image/tick.png" alt="tick" /> Free trial : <span> ${data.freeTrialPeriod ? data.freeTrialPeriod : 'NA'} ${data.freeTrialPeriod ? data.freeTrialPeriod > 1 ? 'days' : 'day' : ''}</span>`;
+
+      const textCenterDiv = document.createElement('div');
+      textCenterDiv.classList.add('text-center', 'pt-3');
+
+      const chooseBtn = document.createElement('div');
+      chooseBtn.classList.add('bh_btn');
+
+
+      const chooseBtnLink = document.createElement('a');
+      chooseBtnLink.textContent = 'Choose';
+
+      // Appending elements
+      planAmountDiv.appendChild(planPrice);
+      planUpperDiv.appendChild(planTitle);
+      planUpperDiv.appendChild(planAmountDiv);
+      planUpperDiv.appendChild(planDescription);
+      planFeatureDiv.appendChild(feature1);
+      planFeatureDiv.appendChild(feature2);
+      textCenterDiv.appendChild(chooseBtn);
+      chooseBtn.appendChild(chooseBtnLink);
+      planWrapperDiv.appendChild(planUpperDiv);
+      planWrapperDiv.appendChild(planFeatureDiv);
+      planWrapperDiv.appendChild(textCenterDiv);
+      colDiv.appendChild(planWrapperDiv); console.log(isDemo, "isDemo");
+      if (isDemo) {
+        chooseBtn.style.cursor = 'not-allowed';
+      }
+
+      chooseBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!isDemo) {
+          purchasePlan(data._id);
+        }
+      })
+
+      // Append the created elements to the body
+      parentDiv.appendChild(colDiv);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+      let toggle_btn = document.getElementById('tog_btn');
+      let headerDiv = document.getElementById('header');
+      let formSub = document.querySelector('#contactForm');
+
+      const yearElement = document.getElementById("year");
+
+      if (toggle_btn && headerDiv && formSub && yearElement) {
+        const currentYear = new Date().getFullYear();
+
+        yearElement.innerText = currentYear.toString();
+
+
+        // Menu Button toggle in responsivness 
+        toggle_btn.addEventListener("click", function () {
+          if (headerDiv.classList.contains('toggle')) {
+            headerDiv.classList.remove('toggle');
+          } else {
+            headerDiv.classList.add('bh_flex_menu', 'toggle');
+          }
+        });
+
+        window.addEventListener("click", function (event) {
+          if (!headerDiv.contains(event.target) && !toggle_btn.contains(event.target)) {
+            headerDiv.classList.remove('toggle');
+            headerDiv.classList.add('bh_flex_menu');
+          }
+        });
+
+
+        //  Contact Form send message click 
+        formSub.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const send_btn = document.getElementById('send_mess');
+          send_btn.classList.add('button-loading');
+
+
+          const first_name = document.getElementById('first_name').value;
+          const last_name = document.getElementById('last_name').value;
+          const email = document.getElementById('email').value;
+          const subject = document.getElementById('subject').value;
+          const message = document.getElementById('message').value;
+          let formObj = { 'first_name': first_name, 'last_name': last_name, 'email': email, 'subject': subject, 'message': message };
+
+          if (validateForm(formObj)) {
+            let sendMessage = async () => {
+              let response = await fetch(`/api/externalWidgetApi`, {
+                method: 'PATCH',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formObj)
+              });
+              let res = await response.json();
+              if (res.status == 1) {
+                send_btn.classList.remove('button-loading');
+                alert(res.message);
+                document.getElementById('first_name').value = '';
+                document.getElementById('last_name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('subject').value = '';
+                document.getElementById('message').value = '';
+              }
+
+            }
+            sendMessage();
+
+          }
+        });
+
+        function isValidEmail(email) {
+          return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(email);
+        }
+
+        function validateForm(formObj) {
+          let validation = true;
+
+          Object.keys(formObj).map((key) => {
+            let errorElement = document.getElementById(`${key}_error`);
+            if (!formObj[key]) {
+              errorElement.textContent = `This field is required.`;
+              validation = false;
+            } else if (key == 'email') {
+              if (!isValidEmail(formObj[key])) {
+                errorElement.textContent = `Please enter a valid email address.`;
+                validation = false;
+              } else { errorElement.textContent = ''; }
+            } else {
+              errorElement.textContent = '';
+            }
+          })
+
+          return validation;
+        }
+      }
+
+
+      //  Bottom to top Button scroll 
+      var btn = document.getElementById('button');
+
+      if (btn) {
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 300) {
+            btn.style.display = 'flex';
+          } else {
+            btn.style.display = 'none';
+          }
+        });
+
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        });
+      }
+
+      // Nav Link Click To scroll particular section 
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', scrollToSection);
+      });
+
+      function scrollToSection(event) {
+        (headerDiv) && headerDiv.classList.remove('toggle');
+
+        const targetSectionId = this.getAttribute('data-section');
+        const targetSection = document.getElementById(targetSectionId);
+
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+
+
+
+    });
+
+  </script>
+
+<body>
+  
+  <!-- Bottom To Top -->
+  <div class="pl_top_icon">
+    <a id="button" class="show cursor_common">
+      <img class="back-to-topimage" src="src/assets/img/upward-arrow.png"/>
+      <!-- <svg width="23" height="18" viewBox="0 0 23 18">
+        <path
+          d="M13.825,18.000 C10.772,18.000 7.928,16.517 6.217,14.033 C5.870,13.530 6.006,12.845 6.519,12.505 C7.032,12.165 7.729,12.297 8.076,12.801 C9.369,14.678 11.518,15.799 13.825,15.799 C17.647,15.799 20.757,12.749 20.757,9.000 C20.757,5.251 17.647,2.200 13.825,2.200 C11.512,2.200 9.359,3.326 8.067,5.212 C7.721,5.717 7.024,5.851 6.510,5.512 C5.996,5.173 5.859,4.489 6.205,3.985 C7.915,1.490 10.763,-0.000 13.825,-0.000 C18.884,-0.000 23.000,4.037 23.000,9.000 C23.000,13.963 18.884,18.000 13.825,18.000 ZM11.293,6.704 C10.902,6.313 10.902,5.679 11.293,5.287 C11.683,4.896 12.316,4.896 12.707,5.287 L15.706,8.291 C15.730,8.315 15.752,8.339 15.772,8.365 C15.777,8.371 15.782,8.377 15.787,8.384 C15.802,8.403 15.817,8.423 15.831,8.443 C15.835,8.449 15.838,8.455 15.842,8.462 C15.856,8.483 15.869,8.505 15.881,8.527 C15.883,8.532 15.886,8.537 15.888,8.541 C15.901,8.566 15.913,8.590 15.923,8.616 C15.925,8.619 15.925,8.622 15.927,8.626 C15.938,8.653 15.948,8.680 15.956,8.708 C15.957,8.712 15.958,8.715 15.959,8.719 C15.967,8.747 15.974,8.774 15.980,8.803 C15.982,8.812 15.982,8.820 15.984,8.829 C15.988,8.852 15.992,8.876 15.995,8.900 C15.998,8.933 16.000,8.966 16.000,9.000 C16.000,9.033 15.998,9.067 15.995,9.100 C15.992,9.124 15.988,9.148 15.984,9.172 C15.982,9.180 15.982,9.189 15.980,9.197 C15.974,9.226 15.967,9.254 15.959,9.282 C15.958,9.285 15.957,9.288 15.956,9.292 C15.948,9.320 15.938,9.348 15.927,9.375 C15.925,9.378 15.925,9.381 15.923,9.384 C15.913,9.410 15.901,9.435 15.888,9.459 C15.886,9.464 15.883,9.468 15.881,9.473 C15.869,9.495 15.856,9.517 15.842,9.539 C15.838,9.545 15.835,9.551 15.831,9.557 C15.817,9.577 15.802,9.597 15.787,9.616 C15.782,9.623 15.777,9.629 15.772,9.636 C15.752,9.661 15.730,9.685 15.707,9.708 L12.707,12.712 C12.511,12.908 12.256,13.006 12.000,13.006 C11.744,13.006 11.488,12.908 11.293,12.712 C10.902,12.321 10.902,11.688 11.293,11.296 L12.586,10.001 L1.000,10.001 C0.448,10.001 -0.000,9.553 -0.000,9.000 C-0.000,8.447 0.448,7.998 1.000,7.998 L12.586,7.998 L11.293,6.704 Z">
+        </path>
+      </svg> -->
+    </a>
+  </div>
+  <!-- Bottom To Top -->
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
