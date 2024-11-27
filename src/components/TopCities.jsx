@@ -14,7 +14,7 @@ function TopCities() {
         {/* <div className="bh_ser_top">Expo Centers</div> */}
         <h3>Top Expo Cities</h3>
       </div>
-      <div data-anim-child="slide-up" className="row justify-between items-end y-gap-10">
+      <div data-anim-child="slide-up" className="row justify-between items-end y-gap-1">
         <div className="col-auto">
           <h2 className="text-30 ">Trending Destinations</h2>
         </div>

@@ -1,12 +1,12 @@
 import React from 'react'
-import "../assets/css/home.css";
-import "../assets/css/main.css";
-import "../assets/css/style.css";
-import bannervector2 from '../assets/img/bannervector2.png'
-import bannervector1 from '../assets/img/bannervector1.png'
-import bannergirls from '../assets/img/bannergirls.png'
-import bannerbackground from '../assets/img/bannerBG.png'
-function BannerComponents() {
+import "../../assets/css/home.css";
+import "../../assets/css/main.css";
+import "../../assets/css/style.css";
+import bannervector2 from '../../assets/img/bannervector2.png'
+import bannervector1 from '../../assets/img/bannervector1.png'
+import Events2 from '../../assets/img/expocity.png'
+import bannerbackground from '../../assets/img/bannerBG.png'
+function Expo_Banner() {
   return (
     <>
     <div className="first_wrap">
@@ -32,10 +32,10 @@ function BannerComponents() {
                <div className="banner_content_left">
                  {/* <h5>Hello Welcome!!</h5> */}
                  <h3>
-                   Event Sphere <span>Organize, Attend and Explore</span>
+                 Organize, Attend and Explore   <span>Expos In Different Cities </span>
                  </h3>
                  <h3>
-                   In <span>Multiple Cities</span>
+                 With <span>Event Sphere</span>
                  </h3>
                  <p>
                    From local expos to global trade shows, discover what
@@ -43,9 +43,15 @@ function BannerComponents() {
                  </p>
 
                  <div className="bh_btn">
-                   <a href="#plan" data-section="plan">
-                     Get Started
-                   </a>
+                   <button className='btn btn btn-large buttonattend' href="#plan" data-section="plan">
+                     Attend
+                   </button>
+                 </div>
+                 &nbsp;
+                 <div className="bh_btn">
+                   <button className='btn btn btn-large buttonhost'  href="#plan" data-section="plan">
+                     Host
+                   </button>
                  </div>
                </div>
              </div>
@@ -54,13 +60,17 @@ function BannerComponents() {
              <div className="col-lg-6 col-md-12 text-end relative">
                <div>
                  <img
-                   src={bannergirls}
+                   src={Events2}
                    alt="banner side img"
+                   style={{
+                    borderRadius:'30px',
+                   }}
                  />
                  <img
                    src={bannervector1}
                    alt="vector"
                    className="vector1"
+                   
                  />
                  <img
                    src={bannervector2}
@@ -77,4 +87,4 @@ function BannerComponents() {
   )
 }
 
-export default BannerComponents
+export default Expo_Banner
