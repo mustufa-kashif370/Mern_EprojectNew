@@ -50,7 +50,7 @@ function CenterList() {
                   </ul>
                 </div>
               </div>
-              <div className="col-lg-4 col-md-6 pt-lg-3 pt-md-2 pt-sm-1">
+              <div className="col-lg-4 col-md-6 pt-lg-3 pt-md-2 pt-sm-1   ">
                 <div className="">
                   <p
                     style={{
