@@ -5,10 +5,15 @@ function Attend_Form() {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
-        password: '',
+        email: '',
         city: '',
         state: '',
-        zip: ''
+        zip: '',
+        eventType: '',
+        ticketType: '',
+        ticketPrice: '',
+        ticketQuantity: '',
+        message: ''
     });
 
     const handleChange = (e) => {
