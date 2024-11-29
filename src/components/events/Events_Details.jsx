@@ -17,7 +17,7 @@ function Events_Details() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "#537962",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
