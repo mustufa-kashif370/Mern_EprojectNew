@@ -1,3 +1,49 @@
+/* Default Menu State */
+.bh_menu {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .bh_toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bh_toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+  }
+  
+  /* Small Screen Styles */
+  @media screen and (max-width: 768px) {
+    .bh_menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    .bh_menu.menu_open {
+      display: flex;
+      margin-left: 500px;
+    }
+  
+    .bh_toggle {
+      display: flex;
+    }
+  }
+  
+
+
+
 /********************************************************
 1. body start
  
@@ -25,6 +71,10 @@ body {
 html {
     scroll-behavior: smooth;
 }
+.event_slider_paragraph:hover {
+    text-decoration: underline;
+    cursor: pointer; /* Optional, adds a pointer cursor on hover */
+  }
 
 *,
 *:before,
@@ -257,6 +307,24 @@ p {
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
+.bh_btn button .buttongetstarted {
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 15px 45px;
+    line-height: normal;
+    cursor: pointer;
+    border: 2px solid var(--primary-color); /* Set border width and color */
+    background-color: var(--primary-color); /* Matches primary color */
+    color: #fff; /* Ensure text is readable */
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
 .btn_login {
     display: inline-block;
     text-align: center;
@@ -286,6 +354,9 @@ p {
     color: var(--primary-color);
 }
 .bh_btn .buttonattend:hover{
+    color: var(--primary-color);
+}
+.bh_btn .buttongetstarted:hover{
     color: var(--primary-color);
 }
 
@@ -509,7 +580,7 @@ p {
     /* padding: 18px; */
     padding-right: 18px;
 }
-
+/* 
 .bh_header_wrapper {
     position: absolute;
     top: 0;
@@ -517,7 +588,7 @@ p {
     right: 0;
     z-index: 1;
     padding: 30px 0;
-}
+} */
 
 .bh_flex_menu {
     display: flex;
@@ -569,6 +640,9 @@ p {
 .logo_heading{
     color: var(--primary-color);
     transition: all .3s;
+    margin-top: 0px;
+    font-weight: 800;
+    font-size:25px
 }
 .logo_heading:hover{
     color: var(--text-color);
@@ -1455,7 +1529,7 @@ input::-webkit-input-placeholder {
         top: -30px;
     }
 }
-
+/* 
 @media(max-width:652px) {
 
     .container {
@@ -1483,7 +1557,7 @@ input::-webkit-input-placeholder {
     .bh_header_wrapper {
         padding: 20px 0;
     }
-}
+} */
 
 @media(max-width:575px) {
     .container {
@@ -1582,7 +1656,7 @@ input::-webkit-input-placeholder {
 
 
 }
-@media(max-width:325px) {
+/* @media(max-width:325px) {
     .bh_menu .bh_btn {
         background-color: white;
         padding: 0;
@@ -1595,4 +1669,4 @@ input::-webkit-input-placeholder {
     
 
    
-}
+} */
