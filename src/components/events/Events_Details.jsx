@@ -8,7 +8,7 @@ function Events_Details() {
         
         >
           <div className="bh_service_head">
-            {/* <div className="bh_ser_top">Events</div> */}
+            <div className="bh_ser_top">Details</div>
             <h3>All Events</h3>
           </div>
           <div className="container">
@@ -17,7 +17,9 @@ function Events_Details() {
                 <div className="">
                   <p
                     style={{
-                      color: "#537962",
+                      color: "darkblue",
+                      // #537962
+                      
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -32,9 +34,10 @@ function Events_Details() {
                         href="https://tdap.gov.pk/expo-center-karachi/"
                         target="_blank"
                         style={{
-                          backgroundColor: "rgba(148, 49, 145, 0.5)",
+                          backgroundColor: "lightgray",
                           textAlign: "justify",
                         }}
+                        // rgba(148, 49, 145, 0.5)
                       >
                         Industry Trade Shows are events where companies in a
                         particular industry can showcase their products and
@@ -61,7 +64,7 @@ function Events_Details() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -76,7 +79,7 @@ function Events_Details() {
                         href="https://tdap.gov.pk/expo-center-karachi/"
                         target="_blank"
                         style={{
-                          backgroundColor: "rgba(148, 49, 145, 0.5)",
+                          backgroundColor: "lightgray",
                           textAlign: "justify",
                         }}
                       >
@@ -91,7 +94,7 @@ function Events_Details() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -106,7 +109,7 @@ function Events_Details() {
                         href="https://tdap.gov.pk/expo-center-karachi/"
                         target="_blank"
                         style={{
-                          backgroundColor: "rgba(148, 49, 145, 0.5)",
+                          backgroundColor: "lightgray",
                           textAlign: "justify",
                         }}
                       >
@@ -121,7 +124,7 @@ function Events_Details() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -136,7 +139,7 @@ function Events_Details() {
                         href="https://tdap.gov.pk/expo-center-karachi/"
                         target="_blank"
                         style={{
-                          backgroundColor: "rgba(148, 49, 145, 0.5)",
+                          backgroundColor: "lightgray",
                           textAlign: "justify",
                         }}
                       >
@@ -151,7 +154,7 @@ function Events_Details() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -166,7 +169,7 @@ function Events_Details() {
                         href="https://tdap.gov.pk/expo-center-karachi/"
                         target="_blank"
                         style={{
-                          backgroundColor: "rgba(148, 49, 145, 0.5)",
+                          backgroundColor: "lightgray",
                           textAlign: "justify",
                         }}
                       >
@@ -181,7 +184,7 @@ function Events_Details() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -196,7 +199,7 @@ function Events_Details() {
                         href="https://tdap.gov.pk/expo-center-karachi/"
                         target="_blank"
                         style={{
-                          backgroundColor: "rgba(148, 49, 145, 0.5)",
+                          backgroundColor: "lightgray",
                           textAlign: "justify",
                         }}
                       >
@@ -211,7 +214,7 @@ function Events_Details() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -226,7 +229,7 @@ function Events_Details() {
                         href="https://tdap.gov.pk/expo-center-karachi/"
                         target="_blank"
                         style={{
-                          backgroundColor: "rgba(148, 49, 145, 0.5)",
+                          backgroundColor: "lightgray",
                           textAlign: "justify",
                         }}
                       >
@@ -241,7 +244,7 @@ function Events_Details() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -256,7 +259,7 @@ function Events_Details() {
                         href="https://tdap.gov.pk/expo-center-karachi/"
                         target="_blank"
                         style={{
-                          backgroundColor: "rgba(148, 49, 145, 0.5)",
+                          backgroundColor: "lightgray",
                           textAlign: "justify",
                         }}
                       >

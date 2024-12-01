@@ -9,7 +9,7 @@ function CenterList() {
           style={{ backgroundImage: `url(${EventBG})` }}
         >
           <div className="bh_service_head">
-            {/* <div className="bh_ser_top">Events</div> */}
+            <div className="bh_ser_top">Details</div>
             <h3>Center List</h3>
           </div>
           <div className="container">
@@ -18,7 +18,7 @@ function CenterList() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -30,7 +30,7 @@ function CenterList() {
                       <a
                         href="https://tdap.gov.pk/expo-center-karachi/"
                         target="_blank"
-                        style={{backgroundColor:"rgba(148, 49, 145, 0.5)"}}> &nbsp; &nbsp; &nbsp; 
+                        style={{backgroundColor:"lightgray"}}> &nbsp; &nbsp; &nbsp; 
                      
                         The Karachi Expo Centre &nbsp; &nbsp; &nbsp; 
                       </a>
@@ -54,7 +54,7 @@ function CenterList() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -65,7 +65,7 @@ function CenterList() {
                     <li className="py-2">
                       <a href="https://conventioncenter.pk/" target="_blank"
                      
-                        style={{backgroundColor:"rgba(148, 49, 145, 0.5)"}}> &nbsp; &nbsp; &nbsp; 
+                        style={{backgroundColor:"lightgray"}}> &nbsp; &nbsp; &nbsp; 
                         Jinnah Convention Center &nbsp; &nbsp; &nbsp; 
                       </a>
                       <ul className="list-disc list-outside ps-5 mt-2 space-y-1 ">
@@ -86,7 +86,7 @@ function CenterList() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -99,7 +99,7 @@ function CenterList() {
                         href="https://www.pakexcel.com/expo-centre-lahore"
                         target="_blank"
                      
-                        style={{backgroundColor:"rgba(148, 49, 145, 0.5)"}}> &nbsp; &nbsp; &nbsp; 
+                        style={{backgroundColor:"lightgray"}}> &nbsp; &nbsp; &nbsp; 
                         Lahore International Expo Centre &nbsp; &nbsp; &nbsp; 
                       </a>
                       <ul className="list-disc list-outside ps-5 mt-2 space-y-1 ">
@@ -122,7 +122,7 @@ function CenterList() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -134,7 +134,7 @@ function CenterList() {
                       <a
                         href="https://pakexcel.com/expo-centre-peshawar"
                         target="_blank"
-                        style={{backgroundColor:"rgba(148, 49, 145, 0.5)"}}>  &nbsp; &nbsp; &nbsp;
+                        style={{backgroundColor:"lightgray"}}>  &nbsp; &nbsp; &nbsp;
                         Expo Centre Peshawar &nbsp; &nbsp; &nbsp;
                       </a>
                       
@@ -156,7 +156,7 @@ function CenterList() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -168,7 +168,7 @@ function CenterList() {
                       <a
                         href="https://expostore.pk/?srsltid=AfmBOopeOm7LhcjR1DfWjEiZ2jaDhti_OMDkMAVavYElxz5b2s8mG2R7"
                         target="_blank"
-                        style={{backgroundColor:"rgba(148, 49, 145, 0.5)"}}> &nbsp; &nbsp; &nbsp; 
+                        style={{backgroundColor:"lightgray"}}> &nbsp; &nbsp; &nbsp; 
                         Multan Expo Store  &nbsp; &nbsp; &nbsp; 
                       </a>
                       <ul className="list-disc list-outside ps-5 mt-2 space-y-1 ">
@@ -191,7 +191,7 @@ function CenterList() {
                 <div className="">
                   <p
                     style={{
-                      color: "darkmagenta",
+                      color: "darkblue",
                       fontSize: "20px",
                       fontWeight: "bolder",
                     }}
@@ -200,7 +200,7 @@ function CenterList() {
                   </p>
                   <ul className="p-2 text-sm max-w-xs list list-disc">
                     <li className="py-2 " >
-                      <a href="https://www.pakexcel.com/expo-centre-quetta" target="_blank" style={{backgroundColor:"rgba(148, 49, 145, 0.5)"}}> &nbsp; &nbsp; &nbsp; Expo Centre Quetta&nbsp; &nbsp; &nbsp; </a>
+                      <a href="https://www.pakexcel.com/expo-centre-quetta" target="_blank" style={{backgroundColor:"lightgray"}}> &nbsp; &nbsp; &nbsp; Expo Centre Quetta&nbsp; &nbsp; &nbsp; </a>
                       <ul className="list-disc list-outside ps-5 mt-2 space-y-1 ">
                         <li>Exhibition Hall 01, Hall 02</li>
                         <li>Convention Hall 01</li>

@@ -6,7 +6,7 @@ import aptechtechwiz from "../assets/img/techwiz.jpg"
 function Sponser() {
   return (
     <>
-      <section id="sponser">
+      <section id="sponser" style={{marginTop:'40px'}}>
       <div className="bh_service_head">
           {/* <div className="bh_ser_top">Events</div> */}
           <h3>Our Partners</h3>

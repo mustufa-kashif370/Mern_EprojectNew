@@ -4,7 +4,7 @@ import "../../assets/css/main.css";
 import "../../assets/css/style.css";
 import bannervector2 from "../../assets/img/bannervector2.png";
 import bannervector1 from "../../assets/img/bannervector1.png";
-import Events2 from "../../assets/img/Events2.png";
+import Events2 from "../../assets/img/about2.png";
 import bannerbackground from "../../assets/img/bannerBG.png";
 function Event_Banner() {
   return (
@@ -22,20 +22,18 @@ function Event_Banner() {
         >
           <div className="container">
             <div className="row gy-4 justify-content-center p-60">
-              {/* Left Content */}
-              <div className="col-lg-6 col-md-12 flex_align_center">
+            <div className="col-lg-6 col-md-12 flex_align_center">
                 <div className="banner_content_left">
                   {/* <h5>Hello Welcome!!</h5> */}
                   <h3>
-                    With <span> Event Sphere</span>
+                  Discover <span> Event Sphere</span>
                   </h3>
                   <h3>
-                    Organize, Attend and Explore{" "}
-                    <span>Events In Different Cities</span>
+                  Connections, Experiences, 
+                    <span>and Events Worldwide</span>
                   </h3>
                   <p>
-                    From local expos to global trade shows, discover what
-                    excites you anytime, anywhere.
+                  
                   </p>
                   <div className="bh_btn">
                     <button
@@ -46,16 +44,7 @@ function Event_Banner() {
                       Attend
                     </button>
                   </div>
-                  &nbsp;
-                  <div className="bh_btn">
-                    <button
-                      className="btn btn btn-large buttonhost"
-                      href="#plan"
-                      data-section="plan"
-                    >
-                      Host
-                    </button>
-                  </div>
+                  
                 </div>
               </div>
 
@@ -73,6 +62,7 @@ function Event_Banner() {
                   <img src={bannervector2} alt="vector" className="vector2" />
                 </div>
               </div>
+             
             </div>
           </div>
         </section>
