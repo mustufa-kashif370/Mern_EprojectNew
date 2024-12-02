@@ -390,6 +390,9 @@ p {
 .send_btn {
     position: relative;
 }
+.send_btn:hover{
+    color: black;
+}
 
 @keyframes skeleton-loading {
     0% {
@@ -682,7 +685,12 @@ p {
     color: var(--text-color);
     padding-bottom: 10px;
 }
-
+.banner_content_left .spanhthrree{
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--text-color);
+    padding-bottom: 10px;
+}
 .banner_content_left h3 span {
     color: var(--primary-color);
 }

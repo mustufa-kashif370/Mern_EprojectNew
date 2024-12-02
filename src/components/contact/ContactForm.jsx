@@ -1,6 +1,6 @@
 import React from 'react';
-import ConatactBG from "../assets/img/serviceBG.png";
-import contact_bg from "../assets/img/contact_bg.png";
+import ConatactBG from "../../assets/img/serviceBG.png";
+import contact_bg from "../../assets/img/contact_bg.png";
 function ContactForm() {
   return (
     <>

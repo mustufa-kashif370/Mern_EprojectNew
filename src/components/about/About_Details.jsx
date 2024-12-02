@@ -90,7 +90,7 @@ function About_Details() {
             </div>
             <hr
               style={{
-                width: "50%",
+                width: "100%",
                 borderWidth: "3px",
                 borderColor: "darkmagenta",
                 marginBottom: "30px",
@@ -157,7 +157,7 @@ function About_Details() {
             </div>
             <hr
               style={{
-                width: "50%",
+                width: "100%",
                 borderWidth: "3px",
                 borderColor: "darkmagenta",
                 marginBottom: "60px",
@@ -242,29 +242,31 @@ function About_Details() {
                             <h4 className="text-xl font-semibold text-gray-700">
                               {item.question}
                             </h4>
-                            <span className={
-                                  openIndex === index
-                                    ? "text-red-500"
-                                    : "text-green-500"
-                                }
-                                style={{
-                                fontSize: '20px',
-                                fontWeight: '900'
-                                }}>
-                             {openIndex === index ? "-" : "+"}
+                            <span
+                              className={
+                                openIndex === index
+                                  ? "text-red-500"
+                                  : "text-blue-700"
+                              }
+                              style={{
+                                fontSize: "20px",
+                                fontWeight: "900",
+                              }}
+                            >
+                              {openIndex === index ? "⛌" : "🞧"}
                             </span>
                           </button>
-                        
+
                           {openIndex === index && (
                             <p className="mt-2 text-gray-600 transition-all duration-300">
-                                  <hr
-              style={{
-                width: "40%",
-                borderWidth: "3px",
-                borderColor: "darkmagenta",
-                marginBottom: "30px",
-              }}
-            />
+                              <hr
+                                style={{
+                                  width: "40%",
+                                  borderWidth: "3px",
+                                  borderColor: "darkmagenta",
+                                  marginBottom: "30px",
+                                }}
+                              />
                               {item.answer}
                             </p>
                           )}

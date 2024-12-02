@@ -11,8 +11,30 @@ function ExpoCenters() {
     <>
       <Navbar />
       <ExpoBanner />
-      <TopCities />
-      <CenterList/>
+      <TopCities /><div
+        className="hrline"
+        style={{
+          marginLeft: "5px",
+          marginRight: "0px",
+          height: "3px",
+          width: "100%",
+          backgroundColor: "darkmagenta",
+          opacity: "0.25",
+          borderRadius: "50px",
+        }}
+      ></div>
+      <CenterList/><div
+        className="hrline"
+        style={{
+          marginLeft: "5px",
+          marginRight: "0px",
+          height: "3px",
+          width: "100%",
+          backgroundColor: "darkmagenta",
+          opacity: "0.25",
+          borderRadius: "50px",
+        }}
+      ></div>
       <Footer />
     </>
   )

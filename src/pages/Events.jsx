@@ -10,8 +10,30 @@ function Events() {
     <>
     <Navbar/>
     <Event_Banner/>
-    <Events_Slider/>
-    <Events_Details/>
+    <Events_Slider/><div
+        className="hrline"
+        style={{
+          marginLeft: "5px",
+          marginRight: "0px",
+          height: "3px",
+          width: "100%",
+          backgroundColor: "darkmagenta",
+          opacity: "0.25",
+          borderRadius: "50px",
+        }}
+      ></div>
+    <Events_Details/><div
+        className="hrline"
+        style={{
+          marginLeft: "5px",
+          marginRight: "0px",
+          height: "3px",
+          width: "100%",
+          backgroundColor: "darkmagenta",
+          opacity: "0.25",
+          borderRadius: "50px",
+        }}
+      ></div>
     <Footer/>
     </>
   )

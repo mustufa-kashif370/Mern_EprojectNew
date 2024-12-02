@@ -4,9 +4,9 @@ import "../../assets/css/main.css";
 import "../../assets/css/style.css";
 import bannervector2 from "../../assets/img/bannervector2.png";
 import bannervector1 from "../../assets/img/bannervector1.png";
-import Events2 from "../../assets/img/about2.png";
+import Events2 from "../../assets/img/contactus.png";
 import bannerbackground from "../../assets/img/bannerBG.png";
-function Event_Banner() {
+function ContactBanner() {
   return (
     <>
       <div className="first_wrap">
@@ -26,21 +26,18 @@ function Event_Banner() {
                 <div className="banner_content_left">
                   {/* <h5>Hello Welcome!!</h5> */}
                   <h3>
-                  Get  <span>To </span> <span className="spanhthrree">
-                  Know 
-                    <span style={{color:'#DD1047'}}> EventSphere</span>
-                  </span>
-                  </h3>
-                 
-                  {/* <h3>
-                  Discover <span> Event Sphere</span>
+                  Get In<span>  Touch With</span>
                   </h3>
                   <h3>
-                  Connections, Experiences, 
-                    <span>and Events Worldwide</span>
-                  </h3> */}
+                  Event Sphere
+                    <span> To Experience </span>
+                  </h3>
+                  <h3>
+                  Events
+                    <span>. </span>
+                  </h3>
                   <p>
-                  Bridging connections, inspiring collaboration, and redefining event management for expos and trade shows.
+                  We’d love to hear from you! Contact us with any questions or inquiries.
                   </p>
                   <div className="bh_btn">
                     <button
@@ -63,6 +60,8 @@ function Event_Banner() {
                     alt="banner side img"
                     style={{
                       borderRadius: "30px",
+                      height:'400px',
+                      width:'600px'
                     }}
                   />
                   <img src={bannervector1} alt="vector" className="vector1" />
@@ -78,4 +77,4 @@ function Event_Banner() {
   );
 }
 
-export default Event_Banner;
+export default ContactBanner;
