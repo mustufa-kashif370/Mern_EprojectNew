@@ -6,6 +6,7 @@ import bannervector2 from '../../assets/img/bannervector2.png'
 import bannervector1 from '../../assets/img/bannervector1.png'
 import Events2 from '../../assets/img/Events2.png'
 import bannerbackground from '../../assets/img/bannerBG.png'
+import { Link } from 'react-router-dom';
 function Event_Banner() {
   return (
     <>
@@ -43,15 +44,15 @@ function Event_Banner() {
                  </p>
 
                  <div className="bh_btn">
-                   <button className='btn btn btn-large buttonattend' href="#plan" data-section="plan">
+                   <Link  to={'/attend'} className='btn btn btn-large buttonattend' href="#plan" data-section="plan">
                      Attend
-                   </button>
+                   </Link>
                  </div>
                  &nbsp;
                  <div className="bh_btn">
-                   <button className='btn btn btn-large buttonhost'  href="#plan" data-section="plan">
+                   <Link to={'/host'} className='btn btn btn-large buttonhost'  href="#plan" data-section="plan">
                      Host
-                   </button>
+                   </Link>
                  </div>
                </div>
              </div>

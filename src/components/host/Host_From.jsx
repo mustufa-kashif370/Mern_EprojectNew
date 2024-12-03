@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ConatactBG from "../../assets/img/serviceBG.png";
 import contact_bg from "../../assets/img/contact_bg.png";
-function Attend_Form() {
+function Host_Form() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -589,38 +589,6 @@ function Attend_Form() {
   );
 }
 
-export default Attend_Form;
+export default Host_Form;
 
-    // <section id="service" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-    //     <div
-    //         className="bh_service_wrapper"
-    //         style={{ backgroundImage: `url('${EventBG}')`, width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-    //     >
-
-    //         <div className="container">
-    //             <div className="row gy-4 justify-content-center">
-    //             <div className="bh_service_head">
-    //             <h3>Attendees Form</h3>
-    //         </div>
-
-    //             </div>
-    //         </div>
-    //     </div>
-    // </section> 
-    {/* <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                      <label
-                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        htmlFor="expoCenter"
-                      >
-                        Expo Center
-                      </label>
-                      <input
-                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="expoCenter"
-                        name="expoCenter"
-                        type="text"
-                        value={formData.expoCenter}
-                        onChange={handleChange}
-                        placeholder="Expo Center"
-                      />
-                    </div> */}
+   

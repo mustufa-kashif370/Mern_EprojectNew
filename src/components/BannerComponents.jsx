@@ -6,6 +6,7 @@ import bannervector2 from "../assets/img/bannervector2.png";
 import bannervector1 from "../assets/img/bannervector1.png";
 import bannergirls from "../assets/img/bannergirls.png";
 import bannerbackground from "../assets/img/bannerBG.png";
+import { Link } from "react-router-dom";
 function BannerComponents() {
   return (
     <>
@@ -38,9 +39,9 @@ function BannerComponents() {
                   </p>
 
                   <div className="bh_btn">
-                   <button className='btn btn btn-large buttongetstarted' href="#plan" data-section="plan">
-                     Get Started
-                   </button>
+                   <Link to={'/login'} className='btn btn btn-large buttongetstarted' href="#plan" data-section="plan">
+                   Get Started
+                   </Link>
                  </div>
                 </div>
               </div>

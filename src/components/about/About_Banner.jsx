@@ -6,6 +6,7 @@ import bannervector2 from "../../assets/img/bannervector2.png";
 import bannervector1 from "../../assets/img/bannervector1.png";
 import Events2 from "../../assets/img/about2.png";
 import bannerbackground from "../../assets/img/bannerBG.png";
+import { Link } from "react-router-dom";
 function Event_Banner() {
   return (
     <>
@@ -43,13 +44,13 @@ function Event_Banner() {
                   Bridging connections, inspiring collaboration, and redefining event management for expos and trade shows.
                   </p>
                   <div className="bh_btn">
-                    <button
+                    <Link to={'/'}
                       className="btn btn btn-large buttonattend"
                       href="#plan"
                       data-section="plan"
                     >
-                      Attend
-                    </button>
+                      Explore
+                    </Link>
                   </div>
                   
                 </div>

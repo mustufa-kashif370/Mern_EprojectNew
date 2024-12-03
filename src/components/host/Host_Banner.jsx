@@ -4,10 +4,10 @@ import "../../assets/css/main.css";
 import "../../assets/css/style.css";
 import bannervector2 from '../../assets/img/bannervector2.png'
 import bannervector1 from '../../assets/img/bannervector1.png'
-import bannergirls from '../../assets/img/attendbanner.jpg'
+import bannergirls from '../../assets/img/host.jpg'
 import bannerbackground from '../../assets/img/bannerBG.png'
 import { Link } from 'react-router-dom';
-function Attend_Banner() {
+function Host_Banner() {
   return (
     <>
     <div className="first_wrap">
@@ -44,8 +44,8 @@ function Attend_Banner() {
                  </p>
 
                  <div className="bh_btn">
-                   <Link to={'/host'} href="#plan" className='btn btn-lg buttongetstarted' data-section="plan">
-                     Host
+                   <Link to={'/attend'} href="#plan" className='btn btn-lg buttongetstarted' data-section="plan">
+                     Attend
                    </Link>
                  </div>
                </div>
@@ -81,4 +81,4 @@ function Attend_Banner() {
   )
 }
 
-export default Attend_Banner
+export default Host_Banner
