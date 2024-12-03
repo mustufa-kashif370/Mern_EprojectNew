@@ -4,7 +4,7 @@ import "../../assets/css/main.css";
 import "../../assets/css/style.css";
 import bannervector2 from '../../assets/img/bannervector2.png'
 import bannervector1 from '../../assets/img/bannervector1.png'
-import bannergirls from '../../assets/img/bannergirls.png'
+import bannergirls from '../../assets/img/attendbanner.jpg'
 import bannerbackground from '../../assets/img/bannerBG.png'
 function Attend_Banner() {
   return (
@@ -56,16 +56,19 @@ function Attend_Banner() {
                  <img
                    src={bannergirls}
                    alt="banner side img"
+                   style={{borderRadius:'20px', boxShadow:'5px 5px 90px rgba(221,16,71,0.6)'}}
                  />
                  <img
                    src={bannervector1}
                    alt="vector"
                    className="vector1"
+                   
                  />
                  <img
                    src={bannervector2}
                    alt="vector"
                    className="vector2"
+                   
                  />
                </div>
              </div>
