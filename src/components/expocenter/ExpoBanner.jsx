@@ -63,9 +63,7 @@ function Expo_Banner() {
                  <img
                    src={Events2}
                    alt="banner side img"
-                   style={{
-                    borderRadius:'30px',
-                   }}
+                   style={{ borderRadius: '30px', boxShadow: '0px 0px 50px rgba(221,16,71,0.5)' }} 
                  />
                  <img
                    src={bannervector1}

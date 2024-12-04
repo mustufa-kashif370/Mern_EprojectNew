@@ -39,17 +39,17 @@ function BannerComponents() {
                   </p>
 
                   <div className="bh_btn">
-                   <Link to={'/signup'} className='btn btn btn-large buttongetstarted' href="#plan" data-section="plan">
-                   Get Started
-                   </Link>
-                 </div>
+                    <Link to={'/signup'} className='btn btn btn-large buttongetstarted' href="#plan" data-section="plan">
+                      Get Started
+                    </Link>
+                  </div>
                 </div>
               </div>
 
               {/* Right Image Section */}
               <div className="col-lg-6 col-md-12 text-end relative">
                 <div>
-                  <img src={bannergirls} alt="banner side img" />
+                  <img src={bannergirls} alt="banner side img" style={{ borderRadius: '20px', boxShadow: '0px 0px 50px rgba(221,16,71,0.5)' }} />
                   <img src={bannervector1} alt="vector" className="vector1" />
                   <img src={bannervector2} alt="vector" className="vector2" />
                 </div>
