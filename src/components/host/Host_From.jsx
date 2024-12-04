@@ -16,6 +16,7 @@ function Host_Form() {
     ticketType: "",
     ticketPrice: "",
     ticketQuantity: "",
+    eventTime:"",
     expoCenter: "",
     message: "",
   });
@@ -97,7 +98,6 @@ function Host_Form() {
     }));
   };
 
-
   const handleCityChange = (e) => {
     const selectedCity = e.target.value;
     const correspondingState = cityStateMapping[selectedCity];
@@ -136,8 +136,8 @@ function Host_Form() {
       >
         <div className="container">
           <div className="bh_service_head">
-            <div className="bh_ser_top">Join Us</div>
-            <h3>Come & Join Us To Get Experience </h3>
+            <div className="bh_ser_top">Host Us</div>
+            <h3>Host With Us and Share Your Expertise</h3>
           </div>
         </div>
 
@@ -150,19 +150,20 @@ function Host_Form() {
                   className="first_wrap"
                 >
                   <div className="contact_detail">
-                    <h4>How to Register for the Event?</h4>
+                    <h4>How to Become a Host?</h4>
                     <p>
-                      Simply visit our registration page, fill out the required
-                      details, and submit your application. We'll confirm your
-                      registration and provide all the necessary event
-                      information.
+                      Simply visit our host registration page, fill out the
+                      necessary details, and submit your application. Once
+                      confirmed, we’ll provide you with all the information you
+                      need to make your hosting experience seamless and
+                      successful.
                     </p>
-                    <h4>What Are the Benefits of Attending?</h4>
+                    <h4>What Are the Benefits of Hosting?</h4>
                     <p>
-                      As an attendee, you'll get access to exclusive networking
-                      opportunities, cutting-edge industry insights, and the
-                      chance to meet key influencers in your field. Don’t miss
-                      out on the experience!
+                      As a host, you’ll have the opportunity to showcase your
+                      expertise, connect with industry leaders, and gain
+                      exposure in your field. It’s a chance to make an impact
+                      while enhancing your professional network!
                     </p>
                     <div className="con_info">
                       <svg
@@ -530,6 +531,23 @@ function Host_Form() {
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                       <label
                         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        htmlFor="eventTime"
+                      >
+                        Event Starts at
+                      </label>
+                      <input
+                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="eventTime"
+                        name="eventTime"
+                        type="time"
+                        value={formData.eventTime}
+                        onChange={handleChange}
+                        placeholder="1"
+                      />
+                    </div>
+                    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                      <label
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                         htmlFor="ticketQuantity"
                       >
                         Ticket Quantity
@@ -590,5 +608,3 @@ function Host_Form() {
 }
 
 export default Host_Form;
-
-   

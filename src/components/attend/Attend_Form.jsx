@@ -16,6 +16,7 @@ function Attend_Form() {
     ticketType: "",
     ticketPrice: "",
     ticketQuantity: "",
+    eventTime:"",
     expoCenter: "",
     message: "",
   });
@@ -526,6 +527,23 @@ function Attend_Form() {
                           {formData.ticketPrice || "Select a ticket price"}
                         </option>
                       </select>
+                    </div>
+                    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                      <label
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        htmlFor="eventTime"
+                      >
+                        Event Starts at
+                      </label>
+                      <input
+                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="eventTime"
+                        name="eventTime"
+                        type="time"
+                        value={formData.eventTime}
+                        onChange={handleChange}
+                        placeholder="1"
+                      />
                     </div>
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                       <label
