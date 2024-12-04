@@ -39,7 +39,7 @@ function BannerComponents() {
                   </p>
 
                   <div className="bh_btn">
-                   <Link to={'/login'} className='btn btn btn-large buttongetstarted' href="#plan" data-section="plan">
+                   <Link to={'/signup'} className='btn btn btn-large buttongetstarted' href="#plan" data-section="plan">
                    Get Started
                    </Link>
                  </div>

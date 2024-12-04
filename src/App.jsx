@@ -7,6 +7,8 @@ import Attend from "./pages/Attend";
 import Host from "./pages/Host";
 import Activities from "./pages/Activities";
 import Contact from "./pages/Contact";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
       <Route path="/host" element={<Host/>} />
       <Route path="/activities" element={<Activities/>} />
       <Route path="/Contact" element={<Contact/>} />
+      <Route path="/login" element={<Login/>} />
+      <Route path="/signup" element={<Signup/>} />
     </Routes>
     </BrowserRouter>
     </>
