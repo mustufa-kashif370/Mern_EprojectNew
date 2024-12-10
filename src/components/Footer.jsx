@@ -4,6 +4,7 @@ import Twitter from "../assets/img/Twitter.png"
 import Pritrest from "../assets/img/Pritrest.png"
 import Insta from "../assets/img/Insta.png"
 import LogoFooter from "../assets/icons/1/ticket.svg"
+import { Link } from 'react-router-dom'
 function Footer() {
    
   return (
@@ -37,12 +38,12 @@ function Footer() {
 
           <div className="col-lg-6 col-md-6 pt-lg-3 pt-md-2 pt-sm-1">
             <div className="bh_footer_list">
-              <h4>Our Services</h4>
+              <h4>Must Visit</h4>
               <ul>
-                <li><a href="#">Hotels</a></li>
-                <li><a href="#"> Seat/Room Booking</a></li>
-                <li><a href="#"> Engineering, Industrial Services</a></li>
-                <li> <a href="#">Internet Of Things</a></li>
+                <li><Link to={'/'}>Home</Link></li>
+                <li><Link to={'/events'}> Events</Link></li>
+                <li><Link to={'/expo-center'}>Expo Centers</Link></li>
+                <li> <Link to={'/signup'}>Upcoming</Link></li>
               </ul>
             </div>
           </div>
@@ -50,10 +51,10 @@ function Footer() {
             <div className="bh_footer_list" >
               <h4>Our Services</h4>
               <ul>
-                <li><a href="#">Event Booking</a></li>
-                <li><a href="#"> Interactive, Analytics & Insights</a></li>
-                <li> <a href="#">Engineering, Industrial Services</a></li>
-                <li><a href="#">Internet Of Thing</a>s</li>
+                <li><Link to={'/attend'}>Attend</Link></li>
+                <li><Link to={'/host'}>Host</Link></li>
+                <li> <Link to={'/about'}>About Us</Link></li>
+                <li><Link to={'/contact'}>Contact</Link></li>
               </ul>
             </div>
           </div>

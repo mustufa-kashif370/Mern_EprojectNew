@@ -62,9 +62,7 @@ function Event_Banner() {
                   <img
                     src={Events2}
                     alt="banner side img"
-                    style={{
-                      borderRadius: "30px",
-                    }}
+                    style={{ borderRadius: '30px', boxShadow: '0px 0px 50px rgba(221,16,71,0.5)' }} 
                   />
                   <img src={bannervector1} alt="vector" className="vector1" />
                   <img src={bannervector2} alt="vector" className="vector2" />

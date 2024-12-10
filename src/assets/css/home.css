@@ -4,7 +4,12 @@
     flex-direction: row;
     gap: 15px;
   }
-  
+  .carousel-control-prev{
+    background:  transparent !important;
+  }
+  .carousel-control-next{
+    background:  transparent !important;
+  }
   .bh_toggle {
     display: none;
     flex-direction: column;
