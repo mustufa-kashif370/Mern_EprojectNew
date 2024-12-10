@@ -13,24 +13,21 @@ import Login from "./pages/Login";
 function App() {
   return (
     <>
-    
-    <BrowserRouter>
-    <Routes>
-   
-      <Route path="" element={<Home/>} />
-      <Route path="/events" element={<Events/>} />
-      <Route path="/expo-center" element={<ExpoCenters/>} />
-      <Route path="/about" element={<About/>} />
-      <Route path="/attend" element={<Attend/>} />
-      <Route path="/host" element={<Host/>} />
-      <Route path="/activities" element={<Activities/>} />
-      <Route path="/Contact" element={<Contact/>} />
-      <Route path="/login" element={<Login/>} />
-      <Route path="/signup" element={<Signup/>} />
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="" element={<Home />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/expo-center" element={<ExpoCenters />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/attend" element={<Attend />} />
+          <Route path="/host" element={<Host />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  
   );
 }
 
