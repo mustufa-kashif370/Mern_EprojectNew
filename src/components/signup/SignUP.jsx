@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
-import './SignUp.css';  // Make sure to import the CSS file for styling
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import "../../assets/css/home.css";
+import "../../assets/css/main.css";
+import "../../assets/css/style.css";
 
 function SignUp() {
-  // State to handle user category (Attendee or Host)
-  const [userCategory, setUserCategory] = useState('');
+  const [userCategory, setUserCategory] = useState("");
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    location: '',
-    category: '',
-    additionalInfo: '',
-    eventPreferences: '',
-    dietaryRequirements: '',
-    organization: '',
-    experience: '',
-    preferredEventType: '',
-    socialMedia: '',
-    availability: '',
-    feedback: '',
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+    category: "",
+    additionalInfo: "",
+    eventPreferences: "",
+    dietaryRequirements: "",
+    organization: "",
+    experience: "",
+    preferredEventType: "",
+    socialMedia: "",
+    availability: "",
+    feedback: "",
   });
 
-  // Handle input changes for form fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -30,150 +32,87 @@ function SignUp() {
     });
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Submitted:', formData);
-    // Logic to submit data (could be an API call)
+    console.log("Form Submitted:", formData);
   };
 
-  // Conditional rendering based on user category
   const renderAdditionalFields = () => {
-    if (userCategory === 'attendee') {
+    if (userCategory === "attendee") {
       return (
         <>
           <div>
-            <label>
-              Phone Number:
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
-            </label>
+            <label>Phone Number:</label>
+            <Input
+              type="tel"
+              placeholder=" +923356978569"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              style={{ backgroundColor: "#F0F0F0" }}
+            />
           </div>
-
           <div>
-            <label>
-              Location:
-              <input
-                type="text"
-                name="location"
-                value={formData.location}
-                onChange={handleChange}
-                required
-                placeholder="Where are you located?"
-              />
-            </label>
+            <label>Location:</label>
+            <Input
+              type="text"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              required
+              placeholder="Where are you located?"
+              style={{ backgroundColor: "#F0F0F0" }}
+            />
           </div>
-
           <div>
-            <label>
-              Event Preferences:
-              <textarea
-                name="eventPreferences"
-                placeholder="Topics or types of events you're interested in"
-                value={formData.eventPreferences}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
-
-          <div>
-            <label>
-              Dietary Requirements:
-              <input
-                type="text"
-                name="dietaryRequirements"
-                value={formData.dietaryRequirements}
-                onChange={handleChange}
-                placeholder="Any dietary restrictions?"
-              />
-            </label>
-          </div>
-
-          <div>
-            <label>
-              Feedback (optional):
-              <textarea
-                name="feedback"
-                placeholder="Any suggestions or feedback?"
-                value={formData.feedback}
-                onChange={handleChange}
-              />
-            </label>
+            <label>Event Preferences:</label>
+            <Input
+              name="eventPreferences"
+              placeholder="Topics or types of events you're interested in"
+              value={formData.eventPreferences}
+              onChange={handleChange}
+              style={{ backgroundColor: "#F0F0F0" }}
+              minLength={100}
+            />
           </div>
         </>
       );
-    } else if (userCategory === 'host') {
+    } else if (userCategory === "host") {
       return (
         <>
           <div>
-            <label>
-              Organization Name:
-              <input
-                type="text"
-                name="organization"
-                value={formData.organization}
-                onChange={handleChange}
-                placeholder="Your organization or business"
-                required
-              />
-            </label>
+            <label>Organization Name:</label>
+            <Input
+              type="text"
+              name="organization"
+              value={formData.organization}
+              onChange={handleChange}
+              required
+              placeholder="Your organization or business"    style={{ backgroundColor: "#F0F0F0" }}
+            />
           </div>
-
           <div>
-            <label>
-              Event Hosting Experience:
-              <textarea
-                name="experience"
-                placeholder="Describe your event hosting experience"
-                value={formData.experience}
-                onChange={handleChange}
-                required
-              />
-            </label>
+            <label>Event Hosting Experience:</label>
+            <Input
+              name="experience"
+              placeholder="Describe your event hosting experience"
+              value={formData.experience}
+              onChange={handleChange}
+              required style={{ backgroundColor: "#F0F0F0" }}
+            />    
           </div>
-
           <div>
-            <label>
-              Preferred Event Type:
-              <input
-                type="text"
-                name="preferredEventType"
-                value={formData.preferredEventType}
-                onChange={handleChange}
-                placeholder="Type of events you are most comfortable hosting"
-                required
-              />
-            </label>
-          </div>
-
-          <div>
-            <label>
-              Social Media/Website (optional):
-              <input
-                type="url"
-                name="socialMedia"
-                value={formData.socialMedia}
-                onChange={handleChange}
-                placeholder="Your social media or website link"
-              />
-            </label>
-          </div>
-
-          <div>
-            <label>
-              Availability:
-              <textarea
-                name="availability"
-                placeholder="When are you available to host events?"
-                value={formData.availability}
-                onChange={handleChange}
-              />
-            </label>
+            <label>Preferred Event Type:</label>
+            <Input
+              type="text"
+              name="preferredEventType"
+              value={formData.preferredEventType}
+              onChange={handleChange}
+              required
+              placeholder="Type of events you are most comfortable hosting"   
+               style={{ backgroundColor: "#F0F0F0" }}
+            />
           </div>
         </>
       );
@@ -182,62 +121,138 @@ function SignUp() {
   };
 
   return (
-    <div className="signup-container">
-      <div className="signup-card">
-        <h1>Sign Up for eventSphere Management</h1>
+    <Wrapper>
+      <SignUpContainer>
+        <Title>Sign Up for EventSphere</Title>
 
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>
-              Name:
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </label>
-          </div>
-
-          <div className="form-group">
-            <label>
-              Email:
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </label>
-          </div>
-
-          <div className="form-group">
-            <label>
-              I am a:
-              <select
-                name="category"
-                value={userCategory}
-                onChange={(e) => setUserCategory(e.target.value)}
-                required
-              >
-                <option value="">Select Category</option>
-                <option value="attendee">Attendee</option>
-                <option value="host">Host</option>
-              </select>
-            </label>
-          </div>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            style={{ backgroundColor: "#F0F0F0" }}
+          />
+          <Input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            style={{ backgroundColor: "#F0F0F0" }}
+          />
+          <CategorySelect
+            value={userCategory}
+            onChange={(e) => setUserCategory(e.target.value)}
+            required 
+          >
+            <option  selected  value="" >Who Are You?</option>
+            <option value="attendee">Attendee</option>
+            <option value="host">Host</option>
+          </CategorySelect>
 
           {renderAdditionalFields()}
 
-          <div className="form-group">
-            <button type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
-    </div>
+          <Button type="submit">Sign Up</Button>
+        </Form>
+
+        <AlreadyHaveAnAccount>
+          Already have an account?{" "}
+          <LoginToContinue>
+            <Link to={"/login"}>Login</Link>
+          </LoginToContinue>
+        </AlreadyHaveAnAccount>
+      </SignUpContainer>
+    </Wrapper>
   );
 }
 
 export default SignUp;
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 100px;
+`;
+
+const SignUpContainer = styled.div`
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+`;
+
+const Title = styled.h1`
+  font-size: 1.5rem;
+  color: #dd1047;
+  margin-bottom: 1.5rem;
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const Input = styled.input`
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #F0F0F0;
+`;
+
+const CategorySelect = styled.select`
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #F0F0F0;
+`;
+
+const Button = styled.button`
+  padding: 0.75rem;
+  background: #e7577e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 1s, border 0.3s ease;
+
+  &:hover {
+    background: white;
+    border: 2px solid #e7577e;
+    color: #e7577e;
+  }
+`;
+
+const AlreadyHaveAnAccount = styled.h3`
+  font-size: 0.9rem;
+  color: blue;
+  font-weight: 200;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  &:hover {
+    font-size: 0.89rem;
+  }
+`;
+
+const LoginToContinue = styled.a`
+  font-size: 0.9rem;
+  color: blue;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  &:hover {
+    text-decoration: underline;
+  }
+`;

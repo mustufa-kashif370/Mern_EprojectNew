@@ -18,11 +18,11 @@ const LoginForm = () => {
               <LoginContainer>
                 <Title>Welcome to EventSphere</Title>
                 <Form>
-                  <Input type="email" placeholder="Email Address" style={{ backgroundColor: '#F0F0F0 ' }} />
+                  <Input type="email" placeholder="Username or Email" style={{ backgroundColor: '#F0F0F0 ' }} />
                   <Input type="password" placeholder="Password" style={{ backgroundColor: '#F0F0F0 ' }} />
                   <Button>LOGIN</Button>
-                  <ForgotPassword>Forgot Password?</ForgotPassword>
-
+                  <ForgotPassword><Link to={"/"}>Forgot Password? </Link></ForgotPassword>
+                 <AlreadyHaveAnAccount>Don't have an account? <SignUpToContinue><Link to={"/signup"}> SignUp </Link></SignUpToContinue></AlreadyHaveAnAccount>
                 </Form>
               </LoginContainer>
             </Wrapper>
@@ -98,7 +98,7 @@ const Button = styled.button`
 
 const ForgotPassword = styled.a`
   font-size: 0.9rem;
-  color: #4a90e2;
+  color: blue;
   text-decoration: none;
   margin-top: 0.5rem;
 
@@ -106,3 +106,25 @@ const ForgotPassword = styled.a`
     text-decoration: underline;
   }
 `;
+const AlreadyHaveAnAccount=styled.h3`
+  font-size: 0.9rem;
+  color: blue;
+  font-weight: 200 ;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  &:hover {
+   font-size: 0.89rem
+  }
+`;
+
+const SignUpToContinue=styled.a`
+  font-size: 0.9rem;
+  color: blue;
+  font-weight: 500 ;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  &:hover {
+   text-decoration: underline
+  }
+`;
+
