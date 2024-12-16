@@ -1,33 +1,94 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import logo from "../../assets/icons/1/ticket.svg";
-import "../../assets/css/home.css";
-import "../../assets/css/main.css";
-import "../../assets/css/style.css";
-import bannervector2 from '../../assets/img/bannervector2.png'
-import bannervector1 from '../../assets/img/bannervector1.png'
-import Events2 from '../../assets/img/expocity.png'
-import bannerbackground from '../../assets/img/bannerBG.png'
-import { Link } from 'react-router-dom';
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { Link, useNavigate } from "react-router-dom";
+import { decode as jwtDecode } from "jwt-decode";
+import { toast } from "react-toastify";
+import authService from "../../services/authService"
+
 const LoginForm = () => {
+  const authservice = new authService();
+  const [isLogin, setIsLogin] = useState(false);
+  const [userDetail, setUserDetail] = useState({});
+  const navigate = useNavigate();
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
+      password: Yup.string()
+        .min(6, "Password must be at least 6 characters")
+        .required("Password is required"),
+    }),
+    onSubmit: async (values) => {
+      try {
+        const response = await authservice.login(values);
+        if (response.result !== null) {
+          setIsLogin(true);
+          const token = localStorage.getItem("token");
+          if (token) {
+            setUserDetail(jwtDecode(token));
+          }
+          toast.success("Login successfully!");
+          navigate("/");
+        }
+      } catch (error) {
+        toast.error("Login failed! Please check your credentials.");
+        console.error("Login error:", error);
+      }
+    },
+  });
+
   return (
-    <> 
-        
-            <Wrapper >
-             
-              <LoginContainer>
-                <Title>Welcome to EventSphere</Title>
-                <Form>
-                  <Input type="email" placeholder="Username or Email" style={{ backgroundColor: '#F0F0F0 ' }} />
-                  <Input type="password" placeholder="Password" style={{ backgroundColor: '#F0F0F0 ' }} />
-                  <Button>LOGIN</Button>
-                  <ForgotPassword><Link to={"/"}>Forgot Password? </Link></ForgotPassword>
-                 <AlreadyHaveAnAccount>Don't have an account? <SignUpToContinue><Link to={"/signup"}> SignUp </Link></SignUpToContinue></AlreadyHaveAnAccount>
-                </Form>
-              </LoginContainer>
-            </Wrapper>
-        
-    </>
+    <Wrapper>
+      <LoginContainer>
+        <Title>Welcome to EventSphere</Title>
+        <Form onSubmit={formik.handleSubmit}>
+          <Input
+            type="email"
+            name="email"
+            placeholder="Username or Email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            style={{ backgroundColor: "#F0F0F0 " }}
+          />
+          {formik.touched.email && formik.errors.email ? (
+            <ErrorMessage>{formik.errors.email}</ErrorMessage>
+          ) : null}
+
+          <Input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            style={{ backgroundColor: "#F0F0F0 " }}
+          />
+          {formik.touched.password && formik.errors.password ? (
+            <ErrorMessage>{formik.errors.password}</ErrorMessage>
+          ) : null}
+
+          <Button type="submit">LOGIN</Button>
+          <ForgotPassword>
+            <Link to={"/"}>Forgot Password?</Link>
+          </ForgotPassword>
+          <AlreadyHaveAnAccount>
+            Don't have an account? 
+            <SignUpToContinue>
+              <Link to={"/signup"}>Sign Up</Link>
+            </SignUpToContinue>
+          </AlreadyHaveAnAccount>
+        </Form>
+      </LoginContainer>
+    </Wrapper>
   );
 };
 
@@ -38,24 +99,16 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  
-    
 `;
 
-
-
 const LoginContainer = styled.div`
-  background: white ;
+  background: white;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 50px rgba(0, 0, 0, 0.5);
   text-align: center;
   max-width: 500px;
   width: 100%;
-`;
-
-const Logo = styled.img`
-  
 `;
 
 const Title = styled.h1`
@@ -75,7 +128,6 @@ const Input = styled.input`
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
-  background-color: gray;
 `;
 
 const Button = styled.button`
@@ -91,12 +143,11 @@ const Button = styled.button`
   &:hover {
     background: white;
     border: 2px solid #e7577e;
-    color: #e7577e
+    color: #e7577e;
   }
 `;
 
-
-const ForgotPassword = styled.a`
+const ForgotPassword = styled.div`
   font-size: 0.9rem;
   color: blue;
   text-decoration: none;
@@ -106,25 +157,34 @@ const ForgotPassword = styled.a`
     text-decoration: underline;
   }
 `;
-const AlreadyHaveAnAccount=styled.h3`
+
+const AlreadyHaveAnAccount = styled.h3`
   font-size: 0.9rem;
   color: blue;
-  font-weight: 200 ;
+  font-weight: 200;
   text-decoration: none;
   margin-top: 0.5rem;
+
   &:hover {
-   font-size: 0.89rem
+    font-size: 0.89rem;
   }
 `;
 
-const SignUpToContinue=styled.a`
+const SignUpToContinue = styled.div`
   font-size: 0.9rem;
   color: blue;
-  font-weight: 500 ;
+  font-weight: 500;
   text-decoration: none;
   margin-top: 0.5rem;
+
   &:hover {
-   text-decoration: underline
+    text-decoration: underline;
   }
 `;
 
+const ErrorMessage = styled.div`
+  color: red;
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+`;
